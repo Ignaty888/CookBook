@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const morgan = require('morgan');
-const sessionConfig = require('./sessionConfig');
+const { sessionConfig } = require('./sessionConfig');
 const reactSSR = require('../middleware/ssr');
 
 module.exports = function configApp(app) {
