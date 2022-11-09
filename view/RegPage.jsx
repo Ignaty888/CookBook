@@ -1,9 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
+const Navbar = require('./Navbar');
 
-function RegPage({ title }) {
+function RegPage({ title = 'reg', user }) {
   return (
     <Layout title={title}>
+      <Navbar user={user} />
       <section className="vh-100 bg-image">
 
         <div className="mask d-flex align-items-center h-100 gradient-custom-3">

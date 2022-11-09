@@ -18,7 +18,7 @@ reg?.addEventListener('submit', async (e) => {
     }),
   });
   const data = await response.json();
-  console.log(data.status);
+
   if (data.status === 'error') {
     errReg.innerHTML = data.message;
   } else {
