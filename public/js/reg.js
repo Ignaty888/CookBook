@@ -1,6 +1,7 @@
 const errReg = document.querySelector('.err-reg');
+const reg = document.querySelector('#registerForm');
 
-document.querySelector('#registerForm').addEventListener('submit', async (e) => {
+reg?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const {
     login, email, password, action, method, passwordRepeat,
