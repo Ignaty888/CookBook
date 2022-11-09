@@ -7,8 +7,11 @@ const configApp = require('./config/serverConfig');
 const app = express();
 
 const PORT = 3000;
+const regRouter = require('./Routers/regRouter');
 
 configApp(app);
+
+app.use('/reg', regRouter);
 
 // подключение роутеров
 

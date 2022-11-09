@@ -5,7 +5,7 @@ function Layout({ title, children }) {
     <html lang="ru">
       <head>
         <meta charSet="utf-8" />
-        <link rel="stylesheet" href="style/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/bootstrap.min.css" />
         <script defer src="/js/client.js" />
         <title>{title}</title>
       </head>
