@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const RegPage = require('../view/RegPage');
 const { User } = require('../db/models');
+const { getUser } = require('../middleware/getUser');
 
 router.get('/', async (req, res) => {
-  res.renderComponent(RegPage, { title: 'Start Page' ,user:''});
+  res.renderComponent(RegPage, { title: 'Start Page', user: '' });
 });
 router.post('/', async (req, res) => {
   const {
@@ -25,14 +26,15 @@ router.post('/', async (req, res) => {
   // }
 
   const user = await User.findOne({ where: { email } });
-  if (user.email === email) {
-    res.status(403).json({ status: 'error', message: 'Такой пользователь уже существует' });
-    return;
-  }
+
   if (!user) {
     const newUser = await User.create({ login, email, password });
     req.session.userId = newUser.id;
     res.status(201).json({ status: 'success', url: '/' });
+    return;
+  }
+  if (user.email === email) {
+    res.status(403).json({ status: 'error', message: 'Такой пользователь уже существует' });
   }
 });
 
