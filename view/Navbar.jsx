@@ -4,7 +4,7 @@ module.exports = function Navbar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">CookBook</a>
+        <a className="navbar-brand" href="/">CookBook</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
@@ -23,13 +23,13 @@ module.exports = function Navbar({ user }) {
                 : (
                   <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                     <li><a className="dropdown-item" href="/reg">Favorites</a></li>
-                    <li><a className="dropdown-item" href="">Logout</a></li>
+                    <li><a className="dropdown-item" href="/logout">Logout</a></li>
                   </ul>
                 )}
             </li>
           </ul>
         </div>
-        <div className="navbar-brand">{user}</div>
+        {user && (<div className="navbar-brand">{user.login}</div>)}
       </div>
     </nav>
   );
