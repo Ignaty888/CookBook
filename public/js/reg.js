@@ -22,6 +22,6 @@ reg?.addEventListener('submit', async (e) => {
   if (data.status === 'error') {
     errReg.innerHTML = data.message;
   } else {
-    window.location.assign('/reg');
+    window.location.assign('/');
   }
 });
