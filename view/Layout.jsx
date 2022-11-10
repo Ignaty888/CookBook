@@ -13,6 +13,7 @@ function Layout({ title, children }) {
         <script defer src="/js/reg.js" />
         <script defer src="/js/login.js" />
         <script defer src="/js/select.js" />
+        <script defer src="/js/favorite.js" />
         <title>{title}</title>
       </head>
       <body>{children}</body>

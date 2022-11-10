@@ -5,3 +5,20 @@
     height: 100%;
     width:  100%;
 }
+.like{
+   
+    fill-rule: nonzero;
+    position: absolute;
+    height: 20px;
+    right: 15px;
+    bottom: 15px;
+}
+.like-on{
+    fill: red;
+    stroke: red;
+    fill-rule: nonzero;
+    position: absolute;
+    height: 20px;
+    right: 15px;
+    bottom: 15px;
+}
