@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const dish = {
       name: el.display.displayName,
       img: el.display.images[0],
-      ingredient: el.content.ingredientLines.map((ing) => ing.ingredient).join('/n'),
+      ingredient: el.content.ingredientLines.map((ing) => ing.ingredient).join('\n'),
       time: el.content.details.totalTimeInSeconds,
-      recepi: el.content.preparationSteps.join('/n'),
+      recepi: el.content.preparationSteps.join('\n'),
       createdAt: new Date(),
       updatedAt: new Date(),
     };
