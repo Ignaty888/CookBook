@@ -17,7 +17,7 @@ module.exports = function MainPage({ user, title, dishes }) {
           <option value="4">Ingredient asc ⬇</option>
         </select>
         {dishes.map((dish) => {
-          return <DishCard key={dish.id} dish={dish} />
+          return <DishCard key={dish.id} dish={dish} user = {user}/>
         })}
       </div>
 
