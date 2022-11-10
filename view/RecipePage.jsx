@@ -1,10 +1,10 @@
 const React = require('react')
 const Layout = require('./Layout')
 const Navbar = require('./Navbar')
- module.exports = function RecipePage ({dish}){
+ module.exports = function RecipePage ({dish, user}){
     return (
         <Layout>
-            <Navbar></Navbar>
+            <Navbar user={user}></Navbar>
             <div className="recipeBlock container w-50 mt-5">
                 <img className="rounded mx-auto d-block" src = {`${dish.img}`} alt="..."/>
                 <p className="text-center">{`${dish.name}`}</p>
