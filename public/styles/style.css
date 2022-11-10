@@ -1,9 +1,10 @@
 .recipe{
     text-indent: 20px;
 }
-.card img{
-    height: 100%;
-    width:  100%;
+.card.m-3 {
+    height: 450px;
+    width:  300px;
+    
 }
 .like{
    
@@ -21,4 +22,10 @@
     height: 20px;
     right: 15px;
     bottom: 15px;
+}
+.row{
+ margin: auto;
+}
+.card-img-top{
+    height: 250px;
 }
