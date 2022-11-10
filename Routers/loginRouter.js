@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const LogPage = require('../view/LogPage');
 const { User } = require('../db/models');
+const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
   res.renderComponent(LogPage, { title: 'Start Page', user: '' });
@@ -16,7 +17,8 @@ router.post('/', async (req, res) => {
     res.status(403).json({ status: 'error', message: 'Такой пользователь не зарегистрирован.' });
     return;
   }
-  if (userLoginDb.password !== password) {
+  const validPassword = await bcrypt.compare(password, userLoginDb.password);
+  if (!validPassword) {
     res.status(403).json({ status: 'error', message: 'Пароль не верный' });
     return;
   }
