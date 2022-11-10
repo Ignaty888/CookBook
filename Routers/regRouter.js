@@ -1,11 +1,11 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const RegPage = require('../view/RegPage');
 const { User } = require('../db/models');
 const { getUser } = require('../middleware/getUser');
-const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
-  res.renderComponent(RegPage, { title: 'Start Page', user: '' });
+  res.renderComponent(RegPage, { title: 'Registration', user: '' });
 });
 router.post('/', async (req, res) => {
   const {
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
   const user = await User.findOne({ where: { email } });
 
   if (!user) {
-    const hash = await bcrypt.hash(password, 10)
+    const hash = await bcrypt.hash(password, 10);
     const newUser = await User.create({ login, email, password: hash });
     req.session.userId = newUser.id;
     res.status(201).json({ status: 'success', url: '/' });
