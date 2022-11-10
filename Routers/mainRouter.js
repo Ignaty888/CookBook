@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 })
 .post('/',async(req,res)=>{
   const {key} = req.body
- 
+
   let dishes;
   switch (key) {
     case '1': 
@@ -34,5 +34,6 @@ router.get('/', async (req, res) => {
   
   res.json(dishes);
 })
+
 
 module.exports = router;
