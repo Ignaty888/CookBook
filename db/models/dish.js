@@ -30,6 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     ingredient: {
       type: DataTypes.TEXT,
     },
+    ingredientCount: {
+      type: DataTypes.INTEGER,
+    },
     time: {
       type: DataTypes.TEXT,
     },
