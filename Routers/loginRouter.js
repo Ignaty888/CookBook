@@ -1,10 +1,10 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const LogPage = require('../view/LogPage');
 const { User } = require('../db/models');
-const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
-  res.renderComponent(LogPage, { title: 'Start Page', user: '' });
+  res.renderComponent(LogPage, { title: 'Login Page', user: '' });
 });
 
 router.post('/', async (req, res) => {
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     return;
   }
   req.session.userId = userLoginDb.id;
-  //console.log(res.locals.user);
+  // console.log(res.locals.user);
 
   res.status(201).json({ status: 'success', url: '/' });
 });
