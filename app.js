@@ -12,10 +12,12 @@ const regRouter = require('./Routers/regRouter');
 const loginRouter = require('./Routers/loginRouter');
 const logoutRouter = require('./Routers/logoutRouter');
 const dishRouter = require('./Routers/dishRouter');
+const recipeRouter = require('./Routers/recipeRouter')
 
 configApp(app);
 
 app.use('/', mainRouter);
+app.use('/dishes', recipeRouter)
 app.use('/reg', regRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);

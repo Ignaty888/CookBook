@@ -7,7 +7,7 @@ module.exports = function MainPage({ user, title, dishes }) {
   return (
     <Layout title={title}>
       <Navbar user={user} />
-      <div className='container d-flex row p-2 justify-content-center alogn-items-center m-3 ' >
+      <div className='container d-flex row p-2 justify-content-center alogn-items-center mt-3 ' >
         {dishes.map((dish) => {
           return <DishCard key={dish.id} dish={dish} />
         })}
