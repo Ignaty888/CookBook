@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
     },
     raw: true,
   });
+  console.log(dishes);
   res.renderComponent(FavoritePage, { title: 'Favorite', dishes });
 })
   .post('/', async (req, res) => {

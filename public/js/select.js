@@ -1,4 +1,4 @@
-const selectForm = document.querySelector('.form-select');
+const selectForm = document.querySelector('#ordinary');
 selectForm?.addEventListener('change', async (event) => {
   const response = await fetch('/', {
     method: 'post',

@@ -9,7 +9,7 @@ module.exports = function MainPage({ user, title, dishes }) {
       <Navbar user={user} />
 
       <div className="container d-flex row p-2 justify-content-center alogn-items-center mt-3 js-favorite">
-        <select className="form-select" aria-label="Default select example">
+        <select className="form-select" aria-label="Default select example"  id="ordinary">
           <option selected>Sort by</option>
           <option value="1">Time desc ⬆</option>
           <option value="2">Time asc ⬇</option>
