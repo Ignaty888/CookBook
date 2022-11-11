@@ -1,13 +1,16 @@
 const router = require('express').Router();
 const MainPage = require('../view/MainPage');
-const { Dish } = require('../db/models');
+const { Dish, FavoriteDish, User } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const dishes = await Dish.findAll({
-    include: Dish.FavoriteDish,
+    include: {
+      model: FavoriteDish,
+    },
     raw: true,
   });
-  // console.log(dishes);
+  console.log(dishes);
+  // const dishes = data.filter((item) => item['FavoriteDishes.user_id'] === res.locals.user.id);
   res.renderComponent(MainPage, { title: 'CookBook', dishes });
 })
   .post('/', async (req, res) => {

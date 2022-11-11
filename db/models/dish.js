@@ -9,8 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ FavoriteDish }) {
+    static associate({ User, FavoriteDish }) {
       Dish.FavoriteDish = Dish.hasMany(FavoriteDish, { foreignKey: 'dish_id' });
+      // Dish.belongsToMany(User, { through: FavoriteDish, foreignKey: 'dish_id', otherKey: 'user_id' });
     }
   }
   const attributes = {
