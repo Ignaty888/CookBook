@@ -1,6 +1,6 @@
-const selectForm = document.querySelector('.form-select');
-selectForm?.addEventListener('change', async (event) => {
-  const response = await fetch('/', {
+const select = document.querySelector('#fav');
+select?.addEventListener('change', async (event) => {
+  const response = await fetch('/favorite', {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ key: event.target.value }),
@@ -24,7 +24,7 @@ selectForm?.addEventListener('change', async (event) => {
             <p>Количество ингридиентов: ${dish.ingredientCount}</p>
           </div>
         </div>`;
-        selectForm.insertAdjacentHTML('afterend', card);
+        select.insertAdjacentHTML('afterend', card);
       });
     } else {
       data.forEach((dish) => {
@@ -49,7 +49,7 @@ selectForm?.addEventListener('change', async (event) => {
             <p>Количество ингридиентов: ${dish.ingredient.split('\n').length}</p>
           </div>
           </div>`;
-        selectForm.insertAdjacentHTML('afterend', result);
+        select.insertAdjacentHTML('afterend', result);
       });
     }
   }

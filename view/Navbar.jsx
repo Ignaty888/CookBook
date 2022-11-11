@@ -22,7 +22,7 @@ module.exports = function Navbar({ user }) {
               )
                 : (
                   <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a className="dropdown-item" href={`/favorite/${user.id}`}>Favorites</a></li>
+                    <li><a className="dropdown-item" href="/favorite">Favorites</a></li>
                     <li><a className="dropdown-item" href="/logout">Logout</a></li>
                   </ul>
                 )}

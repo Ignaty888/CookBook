@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       name: el.display.displayName,
       img: el.display.images[0],
       ingredient: el.content.ingredientLines.map((ing) => ing.ingredient).join('\n'),
-      ingredientCount:el.content.ingredientLines.length,
+      ingredientCount: el.content.ingredientLines.length,
       time: el.content.details.totalTimeInSeconds,
       recepi: el.content.preparationSteps.join('\n'),
       createdAt: new Date(),
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     seed.push(dish);
   });
 
-  console.log(seed)
+  console.log(seed);
 
   const res = await fetch('/api/dishes', {
     method: 'POST',
