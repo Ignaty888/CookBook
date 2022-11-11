@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       time: {
-        type: Sequelize.TEXT,
+        type: Sequelize.INTEGER,
       },
       recepi: {
         type: Sequelize.TEXT,

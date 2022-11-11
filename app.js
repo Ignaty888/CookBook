@@ -12,15 +12,17 @@ const regRouter = require('./Routers/regRouter');
 const loginRouter = require('./Routers/loginRouter');
 const logoutRouter = require('./Routers/logoutRouter');
 const dishRouter = require('./Routers/dishRouter');
-const recipeRouter = require('./Routers/recipeRouter')
+const recipeRouter = require('./Routers/recipeRouter');
+const favoriteRouter = require('./Routers/favoriteRouter');
 
 configApp(app);
 
 app.use('/', mainRouter);
-app.use('/dishes', recipeRouter)
+app.use('/dishes', recipeRouter);
 app.use('/reg', regRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
+app.use('/favorite', favoriteRouter);
 app.use('/api/dishes', dishRouter);
 
 // подключение роутеров

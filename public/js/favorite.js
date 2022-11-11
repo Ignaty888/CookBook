@@ -1,7 +1,8 @@
-const likes = document.querySelectorAll('.like');
-likes?.forEach((like) => {
-  like.addEventListener('click', async (event) => {
-    if (!like.classList.contains('like-on')) {
+const dishes = document.querySelector('.js-favorite');
+
+dishes?.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('like')) {
+    if (!event.target.classList.contains('like-on')) {
       const response = await fetch(`/dishes/${event.target.id}`, {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
@@ -9,7 +10,7 @@ likes?.forEach((like) => {
       });
       const data = await response.json();
       if (data.message === 'success') {
-        like.classList.toggle('like-on');
+        event.target.classList.toggle('like-on');
       }
     } else {
       const response = await fetch(`/dishes/${event.target.id}`, {
@@ -17,8 +18,8 @@ likes?.forEach((like) => {
       });
       const data = await response.json();
       if (data.message === 'dislike') {
-        like.classList.toggle('like-on');
+        event.target.classList.toggle('like-on');
       }
     }
-  });
+  }
 });

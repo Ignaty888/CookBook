@@ -14,6 +14,7 @@ function Layout({ title, children }) {
         <script defer src="/js/login.js" />
         <script defer src="/js/select.js" />
         <script defer src="/js/favorite.js" />
+        <script defer src="/js/favSelect.js" />
         <title>{title}</title>
       </head>
       <body>{children}</body>
