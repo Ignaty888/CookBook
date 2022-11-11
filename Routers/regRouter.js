@@ -19,9 +19,9 @@ router.post('/', async (req, res) => {
     res.status(403).json({ status: 'error', message: 'Пароли должны совпадать.' });
     return;
   }
-  // if (password.length <= 7) {
-  //    res.status(403).json({ status: 'error', message: 'Слишком короткий пароль.' });
-  // }
+  if (password.length <= 7) {
+    res.status(403).json({ status: 'error', message: 'Слишком короткий пароль.' });
+  }
   // if (password !== /[A-Z]/ && password !== /[a-z]/ && password !== /^[A-Za-z\d]/ && password !== /\d/) {
   //    res.status(403).json({ status: 'error', message: 'Пароль не подходит' });
   // }
