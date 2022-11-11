@@ -16,10 +16,10 @@ function DishCard({ dish, user }) {
       )}
       <img src={dish.img} className="card-img-top " alt="..." />
       <div className="card-body">
-        <a href={`/dishes/${dish.id}`} className="card-text ">{dish.name}</a>
-        <p>{`Время приготовления: ${Math.floor(dish.time / 60)} м`}</p>
+        <a href={`/dishes/${dish.id}`} className="card-text nav-link">{dish.name}</a>
+        <p>{`Time for preparing: ${Math.floor(dish.time / 60)} м`}</p>
         <br />
-        <p>{`Количество ингридиентов: ${dish.ingredient.split('\n').length}`}</p>
+        <p>{`Number of ingredients: ${dish.ingredient.split('\n').length}`}</p>
       </div>
     </div>
   );

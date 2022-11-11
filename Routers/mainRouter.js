@@ -3,15 +3,19 @@ const MainPage = require('../view/MainPage');
 const { Dish, FavoriteDish, User } = require('../db/models');
 
 router.get('/', async (req, res) => {
-  const dishes = await Dish.findAll({
-    include: {
-      model: FavoriteDish,
-    },
-    raw: true,
-  });
-  console.log(dishes);
-  // const dishes = data.filter((item) => item['FavoriteDishes.user_id'] === res.locals.user.id);
-  res.renderComponent(MainPage, { title: 'CookBook', dishes });
+  try {
+    const dishes = await Dish.findAll({
+      include: {
+        model: FavoriteDish,
+      },
+      raw: true,
+    });
+    // console.log(dishes);
+    // const dishes = data.filter((item) => item['FavoriteDishes.user_id'] === res.locals.user.id);
+    res.renderComponent(MainPage, { title: 'CookBook', dishes });
+  } catch (error) {
+    console.log(error);
+  }
 })
   .post('/', async (req, res) => {
     const { key } = req.body;
