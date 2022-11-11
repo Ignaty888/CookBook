@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ FavoriteDish }) {
-      Dish.hasMany(FavoriteDish, { foreignKey: 'dish_id' });
+      Dish.FavoriteDish = Dish.hasMany(FavoriteDish, { foreignKey: 'dish_id' });
     }
   }
   const attributes = {
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     time: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
     },
     recepi: {
       type: DataTypes.TEXT,
